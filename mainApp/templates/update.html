@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block title %}
+<title>Class Based View Example | Update</title>
+{% endblock %}
+
+{% block body %}
+<div class="container my-3">
+    <div class="m-auto">
+        <h5 class="text-center bg-dark text-light">Update Employee Record</h5>
+        <form action="{% url 'update' data.id %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" required value="{{data.name}}">
+                </div>
+                <div class="col-md-6">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" value="{{data.email}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="phone">Phone</label>
+                    <input class="form-control" type="text" name="phone" required maxlength="11" value="{{data.phone}}">
+                </div>
+                <div class="col-md-6">
+                    <label for="dsg">Designation</label>
+                    <input class="form-control" type="text" name="dsg" value="{{data.dsg}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="salary">Salary</label>
+                    <input class="form-control" type="text" name="salary" required value="{{data.salary}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="city">City</label>
+                    <input class="form-control" type="text" name="city" value="{{data.city}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="state">State</label>
+                    <input class="form-control" type="text" name="state" value="{{data.state}}">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-md-12">
+                    <button class="bg-dark text-light rounded btn-sm">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block title %}
+<title>Class Based View Example | Add</title>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container my-5">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" name="name" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email">Email</label>
+                <input class="form-control" type="email" name="email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="phone">Phone</label>
+                <input class="form-control" type="text" name="phone" required maxlength="11">
+            </div>
+            <div class="col-md-6">
+                <label for="dsg">Designation</label>
+                <input class="form-control" type="text" name="dsg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="salary">Salary</label>
+                <input class="form-control" type="text" name="salary" required>
+            </div>
+            <div class="col-md-4">
+                <label for="city">City</label>
+                <input class="form-control" type="text" name="city">
+            </div>
+            <div class="col-md-4">
+                <label for="state">State</label>
+                <input class="form-control" type="text" name="state">
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md-12">
+                <button class="bg-dark text-light rounded btn-sm">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
